@@ -60,3 +60,10 @@ button:hover {
   color: #cbd5e1;
   text-align: center;
 }
+
+.preview {
+  color: #38bdf8;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
