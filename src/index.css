@@ -67,3 +67,11 @@ button:hover {
   text-align: center;
   font-weight: bold;
 }
+
+.task {
+  background: #334155;
+  color: white;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 8px;
+}

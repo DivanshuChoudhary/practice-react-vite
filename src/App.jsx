@@ -3,6 +3,15 @@ import "./index.css";
 
 function App() {
   const [task, setTask] = useState("");
+  const [tasks, setTasks] = useState([]);
+
+  const addTask = () => {
+  if (task.trim() === "") return;
+
+  setTasks([...tasks, task]);
+
+  setTask("");
+};
   return (
     <div className="container">
       <h1>📝 To-Do App</h1>
@@ -15,14 +24,29 @@ function App() {
   onChange={(e) => setTask(e.target.value)}
 />
 
-        <button>Add Task</button>
+        <button onClick={addTask}>
+  Add Task
+</button>
       </div>
 
-      <p className="preview">Typing: {task}</p>
 
       <div className="todo-list">
-        <p>No tasks yet.</p>
+
+  {tasks.length === 0 ? (
+    <p>No tasks yet.</p>
+  ) : (
+
+    tasks.map((item, index) => (
+
+      <div className="task" key={index}>
+        {item}
       </div>
+
+    ))
+
+  )}
+
+</div>
     </div>
   );
 }
